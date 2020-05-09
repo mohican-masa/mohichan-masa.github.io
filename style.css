@@ -1,192 +1,392 @@
-<!doctype html>
-<html>
+html,
+body {
+  margin: 0;
+}
 
-<head>
-   <title>Delighters</title>
-   <meta name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
-   <link href="style.css" type="text/css" rel="stylesheet" />
-</head>
+article {
+  font-size: 2em;
+  font-family: futura, sans-serif;
+  overflow-x: hidden;
+}
 
-<body>
-   <article>
-      <section data-delighter class="splash">
-         <h1 data-delighter class="right">To do is to be.</h1>
-         <h2 data-delighter class="left">Nothing is impossible, the word itself says ‘I’m possible’!</h2>
-         <div>画像などをここの下あたりに配置</div>
-      </section>
-      <section data-delighter="start:0.3">
-         <div class="box">If you can dream it, you can do it. Walt Disney <br>ここに画像貼りたい</div>
-         <div class="box">Don’t count the days. Make the days count. <br>ここに画像貼りたい</div>
-         <div class="box">There is nothing impossible to him who will try.<br>ここに画像貼りたい</div>
-         <div>ここにも画像を貼りたい</div>
-      </section>
-      <section>
-         <h2 data-delighter class="right">Features</h2>
-         <ul data-delighter>
-            <li>IPO（株式公開）</li>
-            <li>M&A（事業譲渡）</li>
-            <li>売上（利益率）向上</li>
-            <li>ここにどうなりたいかの文言</li>
-            <li>ここにもどうなりたいかの文言</li>
-            <li>そしてここにもどうなりたいかの文言</li>
-         </ul>
-      </section>
-      <section data-delighter="start:0.25">
-         <h2 data-delighter class="left">Customizing</h2>
-         <p>1. App:Theme</p>
-         <pre>&nbsp;&nbsp;業界に合わせてテーマを変更</pre>
-         <p>2. App:Mission</p>
-         <pre>&nbsp;&nbsp;各自でタスクを作り出す</pre>
-         <p>App：Quest</p>
-         <pre>
-   /* この下にマッピングなどの画像を貼ってひと目でわかりやすい形で紹介したい*/
+@media (max-width: 460px) {
+  article {
+    font-size: 1.5em;
+  }
+}
 
-   .Amazing Your Story！！{
-      You are what you do, not what you say you’ll do.
-   }
-   .Yearly Quest {
-      
-   }
-   .Monthly Quest {
-     
-   }
+section {
+  position: relative;
+  padding: 10vh 10vw;
+  min-height: 100vh;
+  color: #333;
+}
 
-   .Weekly Quest {
-      
-   }
+section:nth-child(odd) {
+  background: #b7af3b;
+  color: #3e263b;
+}
 
-   .Daily Quest {
-     
-   }
-   　　Do what you can, with what you have, where you are.
-   </pre>
-      </section>
-      <section>
-         <h2 data-delighter class="right">How it works</h2>
-         <ul data-delighter>
-            <li>ユーザーはこのアプリをこんなふうに使っています</li>
-            <li>画像添えて。 <br> 健康やフィットネスでデンタルフロスを使う気が起きませんか？　ジムに行きたくないですか？最終的にそれらを楽しみに変えて、健康にしてくれます</li>
-            <li>画像添えて。 <br> 学校や仕事で先生や上司へのレポートを用意する時でも、手ごわいタスクに取り組んでいる間の進捗を記録するのは簡単です</li>
-            <li>画像添えて。 <br> そして他にもたくさん！完全にカスタム可能なタスクリストで、あなたの個人的な目標に合わせてHabiticaをカスタマイズできます。クリエイティブなプロジェクトに取り組んだり、セルフケアに力を入れたり、違う夢を追いかけたり -- 全てはあなた次第です。</li>
-            <li>画像添えて。 <br> どこでもレベルアップ</li>
-            <li>モバイルアプリで出先でも簡単にタスクを記録できます。タップ一つでどこでも目標を達成しましょう。</li>
-         </ul>
-      </section>
+section:nth-child(3) {
+  background: #0aba58;
+  color: #fff;
+}
 
-      <section data-delighter>
-         <h2 data-d="right">This is <br> <b> RPG Gamification </b></h2>
-         <p>
-            By default, delighters.js intializes automatically when the DOM is ready, and with the following
-            configuration:
-         </p>
-         <pre>
-  options = {
-    attribute:  'data-delighter',
-    classNames: ['delighter', 'started', 'ended'],
-    start:      0.75, // default start threshold
-    end:        0.75, // default end threshold
-    autoInit:   true  // initialize when DOMContentLoaded
-  }</pre>
-         <p>
-            You can customize any or all of the above properties using:
-            <pre>
-  Delighters.config({    
-    // set the default start threshold at the bottom
-    start: 1,
-    // let's call Delighters.init() manually later
-    autoInit: false 
-    // ... etc ...
-  })</pre>
-      </section>
-      <section>
-         <h1 data-delighter class="bottom">There Is Always a Better Way</h1>
+section:nth-child(4) {
+  background: #f8c82d;
+  color: #333;
+}
 
-<!------------------------------ Sign Up and Sign In ------------------------------->
+pre {
+  font-size: .75em;
+  background: #222;
+  color: #fff;
+  padding: 20px;
+}
 
-         <div class="form">
+.box {
+  position: relative;
+  width: 50%;
+  height: 30vh;
+  background: #ec484d;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+  text-align: center;
+  color: #fff;
+  font-size: 0.8em;
+  padding: 10px;
+}
 
-            <ul class="tab-group">
-               <li class="tab active"><a href="#signup">Sign Up</a></li>
-               <li class="tab"><a href="#login">Log In</a></li>
-            </ul>
+.box:nth-child(2) {
+  background: #f8c82d;
+}
 
-            <div class="tab-content">
-               <div id="signup">
-                  <h1>Sign Up for Free</h1>
+.box:nth-child(3) {
+  background: #0aba58;
+}
 
-                  <form action="/" method="post">
+a {
+  color: inherit;
+}
 
-                     <div class="top-row">
-                        <div class="field-wrap">
-                           <label>
-                              First Name<span class="req">*</span>
-                           </label>
-                           <input type="text" required autocomplete="off" />
-                        </div>
+.delighter.splash {
+  transition: all 2s ease-out;
+}
 
-                        <div class="field-wrap">
-                           <label>
-                              Last Name<span class="req">*</span>
-                           </label>
-                           <input type="text" required autocomplete="off" />
-                        </div>
-                     </div>
+.delighter.splash.ended {
+  background: #fff;
+}
 
-                     <div class="field-wrap">
-                        <label>
-                           Email Address<span class="req">*</span>
-                        </label>
-                        <input type="email" required autocomplete="off" />
-                     </div>
+.delighter.right {
+  transform: translate(-100%);
+  opacity: 0;
+  transition: all .75s ease-out;
+  font-size: 4rem;
+}
 
-                     <div class="field-wrap">
-                        <label>
-                           Set A Password<span class="req">*</span>
-                        </label>
-                        <input type="password" required autocomplete="off" />
-                     </div>
+.delighter.right.started {
+  transform: none;
+  opacity: 1;
+}
 
-                     <button type="submit" class="button button-block" />Get Started</button>
+.delighter.left {
+  transform: translate(100%);
+  opacity: 0;
+  transition: all .75s ease-out;
+}
 
-                  </form>
+.delighter.left.started {
+  transform: none;
+  opacity: 1;
+}
 
-               </div>
+.delighter.bottom {
+  transform: translatey(300%);
+  opacity: 0;
+  transition: all .75s ease-out;
+  font-size: 60px;
+}
 
-               <div id="login">
-                  <h1>Welcome Back!</h1>
+.delighter.bottom.started {
+  transform: none;
+  opacity: 1;
+}
 
-                  <form action="/" method="post">
+.delighter li {
+  opacity: 0;
+  transform: translatey(400%);
+  transition: all .7s ease-out;
+}
 
-                     <div class="field-wrap">
-                        <label>
-                           Email Address<span class="req">*</span>
-                        </label>
-                        <input type="email" required autocomplete="off" />
-                     </div>
+.delighter.started li {
+  opacity: 1;
+  transform: none;
+}
 
-                     <div class="field-wrap">
-                        <label>
-                           Password<span class="req">*</span>
-                        </label>
-                        <input type="password" required autocomplete="off" />
-                     </div>
+.delighter.started li:nth-child(1) {
+  transition: all .7s ease-out .1s;
+}
 
-                     <p class="forgot"><a href="#">Forgot Password?</a></p>
+.delighter.started li:nth-child(2) {
+  transition: all .7s ease-out .3s;
+}
 
-                     <button class="button button-block" />Log In</button>
+.delighter.started li:nth-child(3) {
+  transition: all .7s ease-out .5s;
+}
 
-                  </form>
+.delighter.started li:nth-child(4) {
+  transition: all .7s ease-out .7s;
+}
 
-               </div>
+.delighter.started li:nth-child(5) {
+  transition: all .7s ease-out .9s;
+}
 
-            </div><!-- tab-content -->
+.delighter.started li:nth-child(6) {
+  transition: all .7s ease-out 1.1s;
+}
 
-         </div> <!-- /form -->
-      </section>
-   </article>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   <script type="text/javascript" src="delighters.js"></script>
-</body>
+.delighter.started li:nth-child(7) {
+  transition: all .7s ease-out 1.3s;
+}
 
-</html>
+.delighter pre {
+  display: block;
+  transition: all 2s ease-out;
+  opacity: 0;
+  padding: 20px 0;
+  width: 1px;
+  overflow: hidden;
+}
+
+.delighter.started pre {
+  max-width: 99999px;
+  width: 100%;
+  opacity: 1;
+}
+
+.delighter .box {
+  transition: all 1s ease-out;
+}
+
+.delighter .box:nth-child(1) {
+  transform: translate(-100%, 0);
+}
+
+.delighter .box:nth-child(2) {
+  transform: translate(170%, -70%);
+}
+
+.delighter .box:nth-child(3) {
+  transform: translate(20%, 0%);
+}
+
+.delighter.started .box:nth-child(1) {
+  transform: translate(0, 0);
+}
+
+.delighter.started .box:nth-child(2) {
+  transform: translate(70%, -70%);
+}
+
+.delighter.started .box:nth-child(3) {
+  transform: translate(20%, -120%);
+}
+
+/*-----------------------------Sign Up and Sign In ---------------------------- */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background: #c1bdba;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #1ab188;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+a:hover {
+  color: #179b77;
+}
+
+.form {
+  background: rgba(19, 35, 47, 0.9);
+  padding: 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+
+.tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+
+.tab-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.tab-group li a {
+  display: block;
+  text-decoration: none;
+  padding: 15px;
+  background: rgba(160, 179, 176, 0.25);
+  color: #a0b3b0;
+  font-size: 20px;
+  float: left;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.tab-group li a:hover {
+  background: #179b77;
+  color: #ffffff;
+}
+
+.tab-group .active a {
+  background: #1ab188;
+  color: #ffffff;
+}
+
+.tab-content>div:last-child {
+  display: none;
+}
+
+h1 {
+  text-align: center;
+  color: #000000;
+  font-weight: 300;
+  margin: 0 0 40px;
+}
+
+
+label {
+  position: absolute;
+  -webkit-transform: translateY(6px);
+  transform: translateY(6px);
+  left: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size: 22px;
+}
+
+label .req {
+  margin: 2px;
+  color: #1ab188;
+}
+
+label.active {
+  -webkit-transform: translateY(50px);
+  transform: translateY(50px);
+  left: 2px;
+  font-size: 14px;
+}
+
+label.active .req {
+  opacity: 0;
+}
+
+label.highlight {
+  color: #ffffff;
+}
+
+input,
+textarea {
+  font-size: 22px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #a0b3b0;
+  color: #ffffff;
+  border-radius: 0;
+  -webkit-transition: border-color .25s ease, box-shadow .25s ease;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: 0;
+  border-color: #1ab188;
+}
+
+textarea {
+  border: 2px solid #a0b3b0;
+  resize: vertical;
+}
+
+.field-wrap {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.top-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.top-row>div {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+
+.top-row>div:last-child {
+  margin: 0;
+}
+
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #1ab188;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+
+.button:hover,
+.button:focus {
+  background: #179b77;
+}
+
+.button-block {
+  display: block;
+  width: 100%;
+}
+
+.forgot {
+  margin-top: -20px;
+  text-align: right;
+}
